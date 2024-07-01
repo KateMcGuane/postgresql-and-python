@@ -1,11 +1,11 @@
 from sqlalchemy import (
-    create_engine, Column , Float, ForeignKey, Integer, String
+    create_engine, Column, Float, ForeignKey, Integer, String
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-# executing the instructions form the "chinook" database
+# executing the instructions from the "chinook" database
 db = create_engine("postgresql:///chinook")
 base = declarative_base()
 
@@ -39,10 +39,10 @@ class Track(base):
     UnitPrice = Column(Float)
 
 
-# instead of connection to the database directly, we will ask for a session
-# create a new instance of sessionmaker, then point to tour engine (the db)
+# instead of connecting to the database directly, we will ask for a session
+# create a new instance of sessionmaker, then point to our engine (the db)
 Session = sessionmaker(db)
-# opens an actual session by calling the Session() subclass defined abouve
+# opens an actual session by calling the Session() subclass defined above
 session = Session()
 
 
